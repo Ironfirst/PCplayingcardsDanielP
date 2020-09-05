@@ -1,5 +1,3 @@
-import javax.smartcardio.Card;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -23,7 +21,7 @@ public class DeckOfCards {
         }
     }
 
-    public ArrayList<PlayingCard> Shuffle(){
+    public ArrayList<PlayingCard> shuffle(){
         Collections.shuffle(deck);
         return deck;
     }

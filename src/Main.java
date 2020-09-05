@@ -6,12 +6,14 @@ public class Main {
 
         System.out.println(deck);
 
-        deck.Shuffle();
+        deck.shuffle();
         System.out.println(deck);
 
         System.out.println(deck.cardLeft());
         System.out.println(deck.topMostCard());
         System.out.println(deck.cardLeft());
+
+        System.out.println(deck.topMostCard());
 
     }
 }

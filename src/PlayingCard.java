@@ -66,8 +66,6 @@ public class PlayingCard implements Comparable<PlayingCard>,Iterable<PlayingCard
         else{
             throw new IllegalArgumentException("suit type not valid, valid suit's are" + validSuitNames);
         }
-
-
     }
 
 
@@ -79,6 +77,8 @@ public class PlayingCard implements Comparable<PlayingCard>,Iterable<PlayingCard
 
     @Override
     public int compareTo(PlayingCard o) {
+
+      //  if(this.iterator().)
 //        if(this.cardName==o.cardName){
 //            return 0;
 //        }
@@ -95,7 +95,13 @@ public class PlayingCard implements Comparable<PlayingCard>,Iterable<PlayingCard
 
     @Override
     public Iterator<PlayingCard> iterator() {
-//        while(getValidCardNames().)
+      // if(this.cardName.)
         return this.iterator();
     }
 }
+
+
+//    @Override
+//    public boolean equals(Object o) {
+//        return (o != null && o instanceof Card && ((Card) o).mRank == mRank && ((Card) o).mSuit == mSuit);
+//    }
