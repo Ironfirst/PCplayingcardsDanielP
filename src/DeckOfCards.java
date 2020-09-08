@@ -26,6 +26,7 @@ public class DeckOfCards {
         return deck;
     }
 
+    // opret et object istedet for en midlertidig string og retuner dette object efter slettelse af det oprindelige top object
     public String topMostCard(){
        String topCard = deck.get(0).getSuit() + " " + deck.get(0).getCardName();
        deck.remove(0);
@@ -35,6 +36,10 @@ public class DeckOfCards {
     public int cardLeft(){
         return deck.size();
     }
+
+    //public int cardEvaluator{
+     //
+    //}
 
     @Override
     public String toString() {

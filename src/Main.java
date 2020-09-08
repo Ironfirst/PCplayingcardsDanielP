@@ -15,5 +15,8 @@ public class Main {
 
         System.out.println(deck.topMostCard());
 
+        PlayingCard tempCard = new PlayingCard("2" , "spar");
+        PlayingCard tempCard2 = new PlayingCard("3" , "spar");
+        System.out.println(tempCard.compareTo(tempCard2));
     }
 }

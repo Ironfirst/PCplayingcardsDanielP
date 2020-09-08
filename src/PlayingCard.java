@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class PlayingCard implements Comparable<PlayingCard>,Iterable<PlayingCard> {
+public class PlayingCard implements Comparable<PlayingCard> {
 
     private String cardName;
     private String suit;
@@ -74,29 +74,81 @@ public class PlayingCard implements Comparable<PlayingCard>,Iterable<PlayingCard
         return  suit+ " "+ cardName+ "\n";
 
     }
-
+    // leg med enum som farver og typer kort " suit og card"
+    //" slå ordinal metoden op og se om den virker til compare."
+/*
+    public boolean compareTo(object o){
+        if (this == o)
+    }
+    */
     @Override
     public int compareTo(PlayingCard o) {
 
-      //  if(this.iterator().)
-//        if(this.cardName==o.cardName){
-//            return 0;
-//        }
-//        if(this.cardName<o.cardName){
-//            return -1;
-//        }
-//        else{
-//            return 1;
-//        }
-        return 0;
+        int CardNameValue = 0;
+        int NextCardNameValue = 0;
+        int SuitNameValue = 0;
+        int NextSuitNameValue = 0;
 
-    }
+        // iterere igennem valid card names med current object og finder cardname værdi
+        for(int i=0;i<getValidCardNames().size();i++){
+            if(this.cardName==getValidCardNames().get(i)){
+               CardNameValue = i;
+            }
+        }
+
+        // iterere igennem valid card names med næstee object og finder cardname værdi
+        for(int i=0;i<getValidCardNames().size();i++){
+            if(o.cardName==getValidCardNames().get(i)){
+                NextCardNameValue = i;
+            }
+        }
+
+        // iterere igennem valid suit names og finder suitname værdi
+        for(int a=0;a<getValidSuit().size();a++)
+        {
+            if (this.suit == getValidSuit().get(a))
+            {
+                SuitNameValue = a;
+            }
+        }
+        // iterere igennem valid suit names og finder Nextsuitname værdi
+            for(int k=0;k<=getValidSuit().size()-1;k++){
+                if(this.suit==getValidSuit().get(k)){
+                    NextSuitNameValue = k;
+                }
+
+        }
+        if(CardNameValue == NextCardNameValue)
+        {
+            if(SuitNameValue==NextSuitNameValue){
+                return 0;
+            }
+            else if(SuitNameValue > NextSuitNameValue){
+                return 1;
+            }
+            else{
+                return -1;
+            }
+        }
+        else if(CardNameValue > NextCardNameValue){
+            return 1;
+        }
+        else{
+            return -1;
+        }
+        /*
+        if(this.cardName.indexOf(this.cardName)==o.cardName.indexOf(o.cardName)){
+            return 0;
+        }
+        else if(this.cardName.indexOf(this.cardName)>o.cardName.indexOf(o.cardName)){
+            return 1;
+        }
+        else{
+            return -1;
+        }
+      */
 
 
-    @Override
-    public Iterator<PlayingCard> iterator() {
-      // if(this.cardName.)
-        return this.iterator();
     }
 }
 
