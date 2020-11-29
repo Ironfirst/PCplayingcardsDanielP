@@ -10,8 +10,9 @@ public class PlayingCard implements Comparable<PlayingCard> {
     public PlayingCard(String cardName, String suit){
         setCardName(cardName);
         setSuit(suit);
-
     }
+
+    public PlayingCard(){}
 
     /**
      * Denne metode retunere en liste af kort navne der er acceptable kort navne
@@ -136,6 +137,10 @@ public class PlayingCard implements Comparable<PlayingCard> {
         else{
             return -1;
         }
+
+
+
+
         /*
         if(this.cardName.indexOf(this.cardName)==o.cardName.indexOf(o.cardName)){
             return 0;

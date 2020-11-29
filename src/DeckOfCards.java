@@ -27,10 +27,20 @@ public class DeckOfCards {
     }
 
     // opret et object istedet for en midlertidig string og retuner dette object efter slettelse af det oprindelige top object
-    public String topMostCard(){
+   /* public String topMostCard(){
        String topCard = deck.get(0).getSuit() + " " + deck.get(0).getCardName();
        deck.remove(0);
        return topCard;
+    }
+
+    */
+// denne metode retunere et kort objekt istedet for en string med kortets værdi.
+    // kan derfor bruges til at give en player et kort træk med objekt af kortet istedet for string.
+    // det er nemmere af sammenligne på denne måde.!?
+    public PlayingCard cardDraw(){
+        PlayingCard tempCardFromDraw = new PlayingCard(deck.get(0).getCardName(),deck.get(0).getSuit());
+        deck.remove(0);
+        return tempCardFromDraw;
     }
 
     public int cardLeft(){
