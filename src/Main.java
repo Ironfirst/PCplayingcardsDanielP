@@ -13,6 +13,20 @@ public class Main {
         System.out.println("Player one name: " + game.player1.name + ". Player one's score: "+ game.player1.Score);
         System.out.println("Player two name: " + game.player2.name + ". Player two's score: "+ game.player2.Score);
 
+        System.out.println("game 1 above game 2 below.");
+
+        Game game2 = new Game();
+        game2.deck.shuffle();
+
+        System.out.println(game2.drawCompareWithDifference());
+
+
+        System.out.println("\n\nTHIS IS THE NEW PART:");
+
+
+        Game game3 = new Game();
+        game3.deck.shuffle();
+        System.out.println(game3.drawWithDifferenceCount());
 
 
         // while(game.deck.cardLeft()>0){

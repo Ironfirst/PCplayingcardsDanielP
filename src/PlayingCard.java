@@ -7,10 +7,48 @@ public class PlayingCard implements Comparable<PlayingCard> {
     private String cardName;
     private String suit;
 
+    private int cardValue;
+    private int suitValue; /* 4: hjerter, 3: ruder, 2 spar, 1 klør */
+
     public PlayingCard(String cardName, String suit){
         setCardName(cardName);
         setSuit(suit);
+
+        initializeCardNameValue();
+        initializeCardSuitValue();
+
     }
+
+    private void initializeCardNameValue(){
+                List<String> cardNames = getValidCardNames();
+                for(int i =1; i<=cardNames.size();i++)
+                {
+                    if (cardNames.get(i - 1) == cardName)
+                    {
+                        this.cardValue = i;
+//                        System.out.println("CardName is: " + cardName + " and is interpreted to be the value: " + cardValue);
+                        break;
+                    }
+                }
+    }
+
+    private void initializeCardSuitValue(){
+        List<String> suits = getValidSuit();
+        for(int i =1; i<=suits.size();i++)
+        {
+            if (suits.get(i - 1) == suit)
+            {
+                this.suitValue = i;
+//                System.out.println("Suit is: " + suit + " and is interpreted to be the value: " + suitValue);
+                break;
+            }
+        }
+    }
+
+    public int getCardValue(){return cardValue;}
+    public int getSuitValue(){return suitValue;}
+
+
 
     public PlayingCard(){}
 
@@ -29,7 +67,7 @@ public class PlayingCard implements Comparable<PlayingCard> {
      * @return "spar","hjerter","klør","ruder"
      */
     public static List<String> getValidSuit(){
-        return Arrays.asList("spar","hjerter","klør","ruder");
+        return Arrays.asList("klør","ruder","hjerter","spar");
     }
 
 
